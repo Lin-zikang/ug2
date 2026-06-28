@@ -1,0 +1,36 @@
+﻿{
+  "articles": [
+    {
+      "title": "“蚂蚁圆柱问题”最优路径判别及解析",
+      "name": "YYF Link",
+      "data": "2026-06-26"
+    },
+    {
+      "title": "找规律失去意义了？",
+      "name": "Lin.Zikang",
+      "data": "2026-06-26"
+    },
+    {
+      "title": "那个被嘲笑的范进， 或许比我们想象中更值得尊重",
+      "name": "Lin.Zikang",
+      "data": "2026-05-30"
+    },
+    {
+      "title": "用概率解析生活",
+      "name": "Lin.Zikang",
+      "data": "2025-11-09"
+    }
+  ],
+"posts": [
+    {
+      "title": "我们发现了一道数学题目的漏洞，并指出了它！",
+      "name": "Lin.Zikang & YYF Link",
+      "data": "2026-05-29"
+    },
+    {
+      "title": "震惊！OpenAI内部通用推理模型32小时内破解困扰人类80年的数学问题！",
+      "name": "Lin.Zikang",
+      "data": "2026-05-23"
+    }
+  ]
+}

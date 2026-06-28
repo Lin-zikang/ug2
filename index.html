@@ -1,0 +1,1049 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小学二年级联合会 | United · Grade-2</title>
+  <meta name="description" content="小学二年级联合会官网，展示宗旨、核心理念、共同特质、联合创始人与视觉标识。" />
+  <link
+    rel="icon"
+    href="logo.svg"
+    type="image/svg+xml"
+  />
+  <link rel="shortcut icon" href="logo.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --panel: rgba(255,255,255,.78);
+      --panel-strong: rgba(255,255,255,.94);
+      --text: #172033;
+      --muted: #5e667a;
+      --shadow: 0 18px 60px rgba(20, 32, 51, .12);
+      --radius: 24px;
+      --max: 1180px;
+      --blue: #2757d4;
+      --navy: #1e2f78;
+      --green: #21a55b;
+      --orange: #f68a25;
+      --pink: #db4d72;
+      --gold: #f2b113;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font: 16px/1.7 "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(39, 87, 212, .10), transparent 22%),
+        radial-gradient(circle at 85% 12%, rgba(242, 177, 19, .14), transparent 18%),
+        radial-gradient(circle at 88% 74%, rgba(219, 77, 114, .10), transparent 20%),
+        linear-gradient(180deg, #fbfcff 0%, #f4f6fb 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(23, 32, 51, .045) 1px, transparent 1px);
+      background-size: 18px 18px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.7));
+      opacity: .4;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    svg { display: block; width: 100%; height: auto; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(18px);
+      background: rgba(246,247,251,.72);
+      border-bottom: 1px solid rgba(255,255,255,.55);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 78px;
+      position: relative;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      flex: none;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, rgba(255,255,255,.95), rgba(244,247,255,.78));
+      box-shadow: 0 12px 30px rgba(39, 87, 212, .10);
+      border: 1px solid rgba(39, 87, 212, .08);
+      padding: 8px;
+      overflow: hidden;
+    }
+
+    .brand-text { min-width: 0; }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: .02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: .22s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 8px 20px rgba(20,32,51,.07);
+    }
+
+    .menu-button {
+      display: none;
+      border: 0;
+      background: var(--panel-strong);
+      box-shadow: var(--shadow);
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      cursor: pointer;
+      color: var(--text);
+      font-size: 1.1rem;
+    }
+
+    .hero { padding: 48px 0 28px; }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,255,255,.72)),
+        linear-gradient(120deg, rgba(39,87,212,.10), rgba(242,177,19,.10) 35%, rgba(33,165,91,.10) 68%, rgba(219,77,114,.10));
+      border: 1px solid rgba(255,255,255,.8);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 4vw, 46px);
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -60px -80px auto;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(39,87,212,.10), transparent 62%);
+      filter: blur(8px);
+      pointer-events: none;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(24px, 3vw, 38px);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(39,87,212,.10);
+      color: var(--navy);
+      font-weight: 700;
+      letter-spacing: .02em;
+      box-shadow: 0 10px 25px rgba(39,87,212,.08);
+    }
+
+    .eyebrow .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+    }
+
+    .hero-wordmark {
+      margin: 22px 0 18px;
+      border-radius: 22px;
+      padding: 12px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.9);
+      box-shadow: 0 20px 45px rgba(20,32,51,.08);
+    }
+
+    .hero-title {
+      margin: 0;
+      font-size: clamp(2rem, 4.6vw, 3.5rem);
+      line-height: 1.12;
+      letter-spacing: -.03em;
+    }
+
+    .hero-title .accent {
+      background: linear-gradient(90deg, var(--blue), var(--green), var(--orange), var(--pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 58ch;
+      margin: 0 0 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform .18s ease, box-shadow .22s ease, background .22s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(20,32,51,.12);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(90deg, var(--blue), #3a7fff 55%, #47a0ff);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,.82);
+      border-color: rgba(20,32,51,.08);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.76);
+      border: 1px solid rgba(20,32,51,.08);
+      color: var(--text);
+      font-weight: 600;
+      box-shadow: 0 10px 24px rgba(20,32,51,.05);
+    }
+
+    .hero-side { position: relative; }
+
+    .showcase {
+      position: relative;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.78));
+      border: 1px solid rgba(255,255,255,.9);
+      padding: clamp(18px, 3vw, 28px);
+      box-shadow: 0 24px 50px rgba(20,32,51,.10);
+      overflow: hidden;
+    }
+
+    .showcase::before {
+      content: "";
+      position: absolute;
+      inset: -30% auto auto -8%;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(242,177,19,.16), transparent 70%);
+      pointer-events: none;
+    }
+
+    .showcase-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(110px, 168px) 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .icon-panel {
+      aspect-ratio: 1;
+      background: linear-gradient(180deg, #ffffff, #f8f9fd);
+      border-radius: 24px;
+      border: 1px solid rgba(20,32,51,.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 16px 40px rgba(20,32,51,.06);
+      display: grid;
+      place-items: center;
+      padding: 14px;
+      overflow: hidden;
+    }
+
+    .showcase-copy {
+      display: grid;
+      gap: 14px;
+    }
+
+    .showcase-title {
+      margin: 0;
+      font-size: clamp(1.2rem, 3vw, 1.7rem);
+      line-height: 1.25;
+    }
+
+    .mini-card {
+      background: rgba(246,247,251,.8);
+      border-radius: 18px;
+      border: 1px solid rgba(20,32,51,.06);
+      padding: 14px 16px;
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: .96rem;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .section { padding: 24px 0; }
+
+    .section-head { margin-bottom: 18px; }
+
+    .section-kicker {
+      color: var(--blue);
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-size: .82rem;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+
+    .section-subtitle {
+      margin: 10px 0 0;
+      max-width: 62ch;
+      color: var(--muted);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      grid-column: span 4;
+      border-radius: var(--radius);
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,.82);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      backdrop-filter: blur(16px);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 16px;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 800;
+      box-shadow: 0 14px 28px rgba(20,32,51,.12);
+    }
+
+    .icon-purpose { background: linear-gradient(135deg, var(--blue), #3aa2ff); }
+    .icon-core { background: linear-gradient(135deg, var(--gold), var(--orange)); }
+    .icon-traits { background: linear-gradient(135deg, var(--green), #48c37a); }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.74);
+      border: 1px solid rgba(20,32,51,.08);
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .timeline-card, .logo-card {
+      border-radius: 28px;
+      background: var(--panel-strong);
+      border: 1px solid rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+      padding: clamp(22px, 3vw, 28px);
+    }
+
+    .date-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(39,87,212,.08), rgba(242,177,19,.10), rgba(219,77,114,.10));
+      color: var(--navy);
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .timeline-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(246,247,251,.85);
+      border: 1px solid rgba(20,32,51,.06);
+    }
+
+    .timeline-no {
+      display: inline-grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      color: white;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--blue), var(--pink));
+      box-shadow: 0 14px 28px rgba(39,87,212,.18);
+    }
+
+    .timeline-item h4 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .logo-layout {
+      display: grid;
+      grid-template-columns: minmax(110px, 190px) 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .logo-frame {
+      aspect-ratio: 1;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #ffffff, #f8f9fd);
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      border: 1px solid rgba(20,32,51,.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85), 0 14px 34px rgba(20,32,51,.06);
+      overflow: hidden;
+    }
+
+    .logo-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .logo-point {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(246,247,251,.85);
+      border: 1px solid rgba(20,32,51,.06);
+    }
+
+    .logo-point strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .logo-point span {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .founder {
+      border-radius: 22px;
+      background: var(--panel-strong);
+      border: 1px solid rgba(255,255,255,.95);
+      box-shadow: var(--shadow);
+      padding: 22px 18px;
+      text-align: center;
+      transition: transform .18s ease, box-shadow .22s ease;
+    }
+
+    .founder:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 44px rgba(20,32,51,.14);
+    }
+
+    .founder-avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 22px;
+      margin: 0 auto 14px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: white;
+      font-size: 1.25rem;
+      background: linear-gradient(135deg, var(--blue), var(--green), var(--orange), var(--pink));
+      box-shadow: 0 16px 30px rgba(39,87,212,.16);
+    }
+
+    .founder-name {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .founder-note {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(39,87,212,.08);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: .92rem;
+    }
+
+    .footer { padding: 28px 0 44px; }
+
+    .footer-card {
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(30,47,120,.96), rgba(39,87,212,.93) 42%, rgba(33,165,91,.86) 70%, rgba(242,138,37,.88));
+      color: white;
+      box-shadow: 0 24px 50px rgba(24, 35, 91, .24);
+      padding: clamp(24px, 4vw, 34px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -60px -120px auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .footer-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .footer h3 {
+      margin: 0 0 8px;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+    }
+
+    .footer p {
+      margin: 0;
+      color: rgba(255,255,255,.86);
+      max-width: 56ch;
+    }
+
+    .footer-meta {
+      display: grid;
+      gap: 10px;
+      justify-items: end;
+      text-align: right;
+    }
+
+    .footer-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.24);
+      font-weight: 700;
+    }
+
+
+    .official-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .official-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.24);
+      font-weight: 700;
+      transition: transform .18s ease, background .2s ease;
+    }
+
+    .official-link:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.22);
+    }
+
+    .footer-visit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      color: var(--navy);
+      background: white;
+      font-weight: 900;
+      box-shadow: 0 14px 30px rgba(13, 24, 73, .18);
+      transition: transform .18s ease, box-shadow .2s ease;
+    }
+
+    .footer-visit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(13, 24, 73, .24);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-layout, .timeline, .footer-layout { grid-template-columns: 1fr; }
+      .founders-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .card { grid-column: span 6; }
+    }
+
+    @media (max-width: 820px) {
+      .nav { min-height: 72px; }
+      .menu-button {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: calc(100% + 10px);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 10px;
+        border-radius: 20px;
+        background: rgba(255,255,255,.94);
+        border: 1px solid rgba(255,255,255,.98);
+        box-shadow: 0 20px 45px rgba(20,32,51,.12);
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        padding: 12px 14px;
+        border-radius: 14px;
+      }
+
+      .showcase-grid, .logo-layout { grid-template-columns: 1fr; }
+      .card { grid-column: span 12; }
+      .founders-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-meta {
+        justify-items: start;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(calc(100% - 20px), var(--max)); }
+      .hero { padding-top: 26px; }
+      .hero-card, .timeline-card, .logo-card, .footer-card { border-radius: 24px; }
+      .founders-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 50px 1fr; }
+      .timeline-no {
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+      }
+      .brand-title { font-size: .98rem; }
+      .brand-subtitle { font-size: .82rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="小学二年级联合会首页">
+        <span class="brand-mark" aria-hidden="true"><img src="logo.svg" alt="小学二年级联合会左上角标志" style="width:100%;height:100%;object-fit:contain;" /></span>
+        <span class="brand-text">
+          <span class="brand-title">小学二年级联合会</span>
+          <span class="brand-subtitle">United · Grade-2</span>
+        </span>
+      </a>
+
+      <button class="menu-button" id="menuButton" aria-label="打开导航菜单" aria-expanded="false">☰</button>
+
+      <nav class="nav-links" id="navLinks" aria-label="主导航">
+        <a href="#about">联合概览</a>
+        <a href="#vision">视觉标识</a>
+        <a href="#founders">联合创始人</a>
+        <a href="#timeline">发展信息</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-layout">
+            <div>
+              <div class="eyebrow">
+                <span class="dot"></span>
+                成立时间：2025年12月30日
+              </div>
+
+              <div class="hero-wordmark">
+                <img src="https://i.imgs.ovh/2026/06/21/1cd907bf4c68be34bca7f75690bd1757.png" alt="小学二年级联合会标题标识" />
+              </div>
+
+              <h1 class="hero-title">
+                探索未知，研究规律，
+                <span class="accent">不断延伸与拓展</span>
+              </h1>
+              <p class="hero-desc">
+                小学二年级联合会以“创新、真实、融合”为核心理念，聚焦理科研究与议论表达，
+                倡导对事物进行持续观察、研究、整理与深入思考。
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#about">查看联合概览</a>
+                <a class="btn btn-secondary" href="#founders">认识联合创始人</a>
+              </div>
+
+              <div class="hero-tags">
+                <span class="tag">理科（数、物、化）</span>
+                <span class="tag">议论</span>
+                <span class="tag">创新 · 真实 · 融合</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">About</div>
+          <h2 class="section-title">联合概览</h2>
+          <p class="section-subtitle">
+            根据现有资料整理，小学二年级联合会围绕探索、研究、整理与拓展展开实践，
+            以理性思考、求真精神和融合意识形成共同方向。
+          </p>
+        </div>
+
+        <div class="info-grid">
+          <article class="card">
+            <div class="card-icon icon-purpose">宗</div>
+            <h3>宗旨</h3>
+            <p>探索未知，研究、整理事物规律，不断延伸、拓展。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon icon-core">核</div>
+            <h3>核心理念</h3>
+            <p>创新、真实、融合。</p>
+            <div class="pill-row">
+              <span class="pill">创新</span>
+              <span class="pill">真实</span>
+              <span class="pill">融合</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon icon-traits">特</div>
+            <h3>共同特质</h3>
+            <p>爱科学、爱研究，具有刨根问底的质疑精神，以及追求真理的辩证性思维。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="timeline">
+      <div class="container">
+        <div class="timeline">
+          <article class="timeline-card">
+            <div class="section-kicker">Timeline</div>
+            <h2 class="section-title">发展信息</h2>
+            <p class="section-subtitle">以已提供材料为基础，整理出联合会当前可公开展示的关键资料。</p>
+
+            <div class="date-chip">2025 / 12 / 30 · 成立</div>
+
+            <div class="timeline-list">
+              <div class="timeline-item">
+                <div class="timeline-no">01</div>
+                <div>
+                  <h4>成立时间</h4>
+                  <p>小学二年级联合会成立于 2025 年 12 月 30 日。</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-no">02</div>
+                <div>
+                  <h4>研究方向</h4>
+                  <p>领域包括理科（数、物、化）以及议论表达，强调观察、分析与论证能力。</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-no">03</div>
+                <div>
+                  <h4>站内展示规范</h4>
+                  <p>联合创始人页面统一采用英文名称，便于在视觉与信息层面保持一致性。</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="logo-card" id="vision">
+            <div class="section-kicker">Identity</div>
+            <h2 class="section-title">视觉标识</h2>
+            <p class="section-subtitle">站点使用已提供的彩色字标与几何图形标识，整体风格兼具理性结构感与鲜明辨识度。</p>
+
+            <div class="logo-layout">
+              <div class="logo-frame" aria-hidden="true"><img src="logo.svg" alt="小学二年级联合会 logo 设计讲解图" style="width:100%;height:100%;object-fit:contain;" /></div>
+              <div>
+                <div class="logo-points">
+                  <div class="logo-point">
+                    <strong>主标识</strong>
+                    <span>彩色中文字标搭配英文副标题，形成完整的官方名称呈现。</span>
+                  </div>
+                  <div class="logo-point">
+                    <strong>图形符号</strong>
+                    <span>圆形边界与三向结构构成基础图形，辅以两条彩色线段，形成简洁且稳定的识别形象。</span>
+                  </div>
+                  <div class="logo-point">
+                    <strong>页面语言</strong>
+                    <span>网页以浅色、留白、圆角卡片和渐变强调色为主，兼顾正式感与现代感。</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="founders">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Founders</div>
+          <h2 class="section-title">联合创始人</h2>
+          <p class="section-subtitle">站内仅使用英文名称表示。</p>
+        </div>
+
+        <div class="founders-grid">
+          <article class="founder">
+            <div class="founder-avatar">LZ</div>
+            <h3 class="founder-name">Lin.Zikang</h3>
+            <p class="founder-note">Founder</p>
+          </article>
+          <article class="founder">
+            <div class="founder-avatar">YY</div>
+            <h3 class="founder-name">Ye.Yinfeng</h3>
+            <p class="founder-note">Founder</p>
+          </article>
+          <article class="founder">
+            <div class="founder-avatar">ZR</div>
+            <h3 class="founder-name">Zhang.Rui</h3>
+            <p class="founder-note">Founder</p>
+          </article>
+          <article class="founder">
+            <div class="founder-avatar">YR</div>
+            <h3 class="founder-name">Yu.Ruixuan</h3>
+            <p class="founder-note">Founder</p>
+          </article>
+          <article class="founder">
+            <div class="founder-avatar">ZL</div>
+            <h3 class="founder-name">Zhu.Lejia</h3>
+            <p class="founder-note">Founder</p>
+          </article>
+        </div>
+
+        <div class="notice">名称规范：站内统一使用英文名</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-card">
+        <div class="footer-layout">
+          <div>
+            <h3>小学二年级联合会</h3>
+            <p>United · Grade-2。以研究精神、求真态度与融合视角，持续探索未知、整理规律、拓展边界。</p>
+            <div class="official-links" aria-label="官方账号">
+              <a class="official-link" href="https://qm.qq.com/q/WfIoCCzMoC" target="_blank" rel="noopener noreferrer">官方QQ群</a>
+              <a class="official-link" href="https://b23.tv/ynNuErx" target="_blank" rel="noopener noreferrer">官方 Bilibili 账号</a>
+            </div>
+          </div>
+          <div class="footer-meta">
+            <div class="footer-badge">Official Website Prototype</div>
+            <div class="footer-badge">Responsive · Single File HTML</div>
+            <a class="footer-visit" href="./community.html?v=utf8-20260625-title-name-data-lazy" aria-label="进入小学二年级联合会内容中心">去看看 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
